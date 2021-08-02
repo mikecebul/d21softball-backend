@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tournaments",
+  "info": {
+    "name": "tournament",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "meta_description": {
+      "type": "text"
+    },
+    "meta_title": {
+      "type": "text"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "date_from": {
+      "type": "date"
+    },
+    "date_to": {
+      "type": "date"
+    },
+    "class": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    }
+  }
+}
