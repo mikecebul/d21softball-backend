@@ -14,7 +14,7 @@ module.exports = ({}) => ({
   settings: {
     cors: {
       enabled: true,
-      origin: ['https://mikecebul.cloud', 'https://www.mikecebul.cloud', 'https://api.mikecebul.cloud', "https://auth--masa-d21.netlify.app"],
+      origin: ['https://mikecebul.cloud', 'https://www.mikecebul.cloud', 'https://api.mikecebul.cloud'],
     },
     cookieGetter: {
       enabled: true

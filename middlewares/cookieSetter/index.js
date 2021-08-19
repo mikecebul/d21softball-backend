@@ -10,13 +10,11 @@ module.exports = (strapi) => {
             if (responseCode === 200) {
               const { jwt: jwtToken } = ctx.response.body;
               ctx.cookies.set('token', jwtToken, {
-                signed: true,
                 httpOnly: true,
-                overwrite: true,
                 secure: true,
-                maxAge: 1000 * 60 * 60 * 24 * 2, // 2 Day Age
-                // discard the domain property if in development mode to make the cookie work
                 domain: "mikecebul.cloud",
+                overWrite: true,
+                maxAge: 1000 * 60 * 60 * 24 * 14, // 14 Day Age
               });
             }
           }
