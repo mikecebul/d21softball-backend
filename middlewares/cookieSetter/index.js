@@ -11,8 +11,8 @@ module.exports = (strapi) => {
               const { jwt: jwtToken } = ctx.response.body;
               ctx.cookies.set('token', jwtToken, {
                 httpOnly: true,
-                secure: true,
-                domain: "mikecebul.cloud",
+                secure: process.env.NODE_ENV === "production" ? true : false,
+                domain: process.env.NODE_ENV === "development" ? "localhost" : "mikecebul.cloud",
                 overWrite: true,
                 maxAge: 1000 * 60 * 60 * 24 * 14, // 14 Day Age
               });
