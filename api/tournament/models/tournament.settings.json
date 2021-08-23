@@ -54,6 +54,10 @@
     },
     "location": {
       "type": "string"
+    },
+    "orders": {
+      "via": "tournament",
+      "collection": "order"
     }
   }
 }
