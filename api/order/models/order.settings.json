@@ -33,6 +33,10 @@
       "plugin": "users-permissions",
       "model": "user",
       "via": "orders"
+    },
+    "camp": {
+      "model": "camp",
+      "via": "orders"
     }
   }
 }
