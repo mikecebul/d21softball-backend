@@ -56,19 +56,20 @@ module.exports = {
     const BASE_URL = ctx.request.headers.origin || "http://localhost:3000";
 
     const { tournament, camp } = ctx.request.body;
-    console.log(ctx.request.body);
 
     if (!tournament && !camp) {
       return ctx.throw(400, "Please specify a product");
     }
 
-    const realProduct =
-      (await strapi.services.tournament?.findOne({ id: tournament?.id })) ||
-      (await strapi.services.camp?.findOne({ id: camp?.id }));
+    const realTournament = await strapi.services.tournament?.findOne({ id: tournament?.id })
+    const realCamp = await strapi.services.camp?.findOne({ id: camp?.id })
 
-    if (!realProduct) {
+    if (!realTournament && !realCamp) {
       return ctx.throw(404, "No product with such id");
     }
+
+    const realProduct = { tournament: realTournament, camp: realCamp }
+    console.log(realProduct);
 
     const { user } = ctx.state;
 
@@ -83,19 +84,28 @@ module.exports = {
           price_data: {
             currency: "usd",
             product_data: {
-              name: realProduct.name,
+              name: realProduct.tournament?.name || realProduct.camp?.name,
             },
-            unit_amount: fromDecimalToInt(realProduct.price),
+            unit_amount: fromDecimalToInt(realProduct.tournament?.price || realProduct.camp?.price),
           },
           quantity: 1,
         },
       ],
     });
     // Create the order
+    console.log({
+      user: user.id,
+      tournament: realProduct.tournament?.id,
+      camp: realProduct.camp?.id,
+      total: realProduct.tournament?.price || realProduct.camp?.price,
+      status: "unpaid",
+      checkout_session: session.id,
+    })
     const newOrder = await strapi.services.order.create({
       user: user.id,
-      product: realProduct.id,
-      total: realProduct.price,
+      tournament: realProduct.tournament?.id,
+      camp: realProduct.camp?.id,
+      total: realProduct.tournament?.price || realProduct.camp?.price,
       status: "unpaid",
       checkout_session: session.id,
     });
