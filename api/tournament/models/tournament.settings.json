@@ -57,7 +57,8 @@
     },
     "orders": {
       "via": "tournament",
-      "collection": "order"
+      "collection": "order",
+      "private": true
     }
   }
 }
