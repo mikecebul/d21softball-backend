@@ -95,16 +95,14 @@ module.exports = {
     // Create the order
     console.log({
       user: user.id,
-      tournament: realProduct.tournament?.id,
-      camp: realProduct.camp?.id,
+      ...(realProduct.tournament.id ? {tournament: realProduct.tournament.id} : {camp: realProduct.camp.id}),
       total: realProduct.tournament?.price || realProduct.camp?.price,
       status: "unpaid",
       checkout_session: session.id,
     })
     const newOrder = await strapi.services.order.create({
       user: user.id,
-      tournament: realProduct.tournament?.id,
-      camp: realProduct.camp?.id,
+      ...(realProduct.tournament.id ? {tournament: realProduct.tournament.id} : {camp: realProduct.camp.id}),
       total: realProduct.tournament?.price || realProduct.camp?.price,
       status: "unpaid",
       checkout_session: session.id,
@@ -112,4 +110,27 @@ module.exports = {
 
     return { id: session.id };
   },
+
+  /**
+   * Given a checkout session, verifies payment and updates order
+   * @param {any} ctx 
+   */
+  async confirm(ctx) {
+    const { checkout_session } = ctx.request.body
+
+    const session = await stripe.checkout.sessions.retrieve(checkout_session)
+
+    if(session.payment_status === 'paid') {
+      const updateOrder = await strapi.services.order.update({
+        checkout_session
+      },
+      {
+        status: 'paid'
+      })
+
+      return sanitizeEntity(updateOrder, { model: strapi.models.order })
+    } else {
+      ctx.throw(400, "The payment wasn't successful, please call support")
+    }
+  }
 };
