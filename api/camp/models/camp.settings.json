@@ -20,7 +20,41 @@
     },
     "orders": {
       "via": "camp",
-      "collection": "order"
+      "collection": "order",
+      "private": true
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": ["images", "files", "videos"],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "meta_description": {
+      "type": "text"
+    },
+    "meta_title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "date_from": {
+      "type": "date"
+    },
+    "Date_to": {
+      "type": "date"
+    },
+    "type": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
     }
   }
 }

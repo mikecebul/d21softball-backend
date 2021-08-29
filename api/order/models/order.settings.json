@@ -35,8 +35,8 @@
       "via": "orders"
     },
     "camp": {
-      "model": "camp",
-      "via": "orders"
+      "via": "orders",
+      "model": "camp"
     }
   }
 }

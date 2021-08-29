@@ -54,24 +54,31 @@ module.exports = {
    */
   async create(ctx) {
     const BASE_URL = ctx.request.headers.origin || "http://localhost:3000";
-
     const { tournament, camp } = ctx.request.body;
+    const { user } = ctx.state;
 
     if (!tournament && !camp) {
       return ctx.throw(400, "Please specify a product");
     }
 
-    const realTournament = await strapi.services.tournament?.findOne({ id: tournament?.id })
-    const realCamp = await strapi.services.camp?.findOne({ id: camp?.id })
-
-    if (!realTournament && !realCamp) {
-      return ctx.throw(404, "No product with such id");
+    let realProduct;
+    if (tournament) {
+      realProduct = await strapi.services.tournament.findOne({
+        id: tournament.id,
+      });
+    }
+    if (camp) {
+      realProduct = await strapi.services.camp.findOne({
+        id: camp.id,
+      });
     }
 
-    const realProduct = { tournament: realTournament, camp: realCamp }
-    console.log(realProduct);
+    // console.log("Real Product:", realProduct);
 
-    const { user } = ctx.state;
+    if (!realProduct) {
+      console.log("shiiitttttt");
+      return ctx.throw(404, "No product with such id");
+    }
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
@@ -84,26 +91,21 @@ module.exports = {
           price_data: {
             currency: "usd",
             product_data: {
-              name: realProduct.tournament?.name || realProduct.camp?.name,
+              name: realProduct.name,
             },
-            unit_amount: fromDecimalToInt(realProduct.tournament?.price || realProduct.camp?.price),
+            unit_amount: fromDecimalToInt(realProduct.price),
           },
           quantity: 1,
         },
       ],
     });
-    // Create the order
-    console.log({
-      user: user.id,
-      ...(realProduct.tournament.id ? {tournament: realProduct.tournament.id} : {camp: realProduct.camp.id}),
-      total: realProduct.tournament?.price || realProduct.camp?.price,
-      status: "unpaid",
-      checkout_session: session.id,
-    })
+
     const newOrder = await strapi.services.order.create({
       user: user.id,
-      ...(realProduct.tournament.id ? {tournament: realProduct.tournament.id} : {camp: realProduct.camp.id}),
-      total: realProduct.tournament?.price || realProduct.camp?.price,
+      ...(tournament
+        ? { tournament: realProduct.id }
+        : { camp: realProduct.id }),
+      total: realProduct.price,
       status: "unpaid",
       checkout_session: session.id,
     });
@@ -113,24 +115,26 @@ module.exports = {
 
   /**
    * Given a checkout session, verifies payment and updates order
-   * @param {any} ctx 
+   * @param {any} ctx
    */
   async confirm(ctx) {
-    const { checkout_session } = ctx.request.body
+    const { checkout_session } = ctx.request.body;
 
-    const session = await stripe.checkout.sessions.retrieve(checkout_session)
+    const session = await stripe.checkout.sessions.retrieve(checkout_session);
 
-    if(session.payment_status === 'paid') {
-      const updateOrder = await strapi.services.order.update({
-        checkout_session
-      },
-      {
-        status: 'paid'
-      })
+    if (session.payment_status === "paid") {
+      const updateOrder = await strapi.services.order.update(
+        {
+          checkout_session,
+        },
+        {
+          status: "paid",
+        }
+      );
 
-      return sanitizeEntity(updateOrder, { model: strapi.models.order })
+      return sanitizeEntity(updateOrder, { model: strapi.models.order });
     } else {
-      ctx.throw(400, "The payment wasn't successful, please call support")
+      ctx.throw(400, "The payment wasn't successful, please call support");
     }
-  }
+  },
 };
