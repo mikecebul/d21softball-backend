@@ -5,7 +5,7 @@ module.exports = (strapi) => {
       strapi.app.use(async (ctx, next) => {
         await next();
         const requestURL = ctx.request.url;
-        if (requestURL.startsWith("/auth/local/")) {
+        if (requestURL.startsWith("/auth/")) {
           const responseCode = ctx.response.status;
           if (responseCode === 200) {
             const { jwt: jwtToken } = ctx.response.body;
@@ -17,6 +17,7 @@ module.exports = (strapi) => {
                   ? "localhost"
                   : "mikecebul.cloud",
               overWrite: true,
+              sameSite: "Lax",
               maxAge: 1000 * 60 * 60 * 24 * 14, // 14 Day Age
             });
           }
