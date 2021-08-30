@@ -76,7 +76,6 @@ module.exports = {
     // console.log("Real Product:", realProduct);
 
     if (!realProduct) {
-      console.log("shiiitttttt");
       return ctx.throw(404, "No product with such id");
     }
 
@@ -109,7 +108,7 @@ module.exports = {
       status: "unpaid",
       checkout_session: session.id,
     });
-
+    console.log("New Order:", await newOrder);
     return { id: session.id };
   },
 

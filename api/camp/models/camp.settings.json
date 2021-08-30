@@ -19,14 +19,18 @@
       "type": "decimal"
     },
     "orders": {
+      "private": true,
       "via": "camp",
-      "collection": "order",
-      "private": true
+      "collection": "order"
     },
     "image": {
       "model": "file",
       "via": "related",
-      "allowedTypes": ["images", "files", "videos"],
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
       "plugin": "upload",
       "required": false,
       "pluginOptions": {}
@@ -45,13 +49,10 @@
       "targetField": "name"
     },
     "date_from": {
-      "type": "date"
+      "type": "datetime"
     },
-    "Date_to": {
-      "type": "date"
-    },
-    "type": {
-      "type": "string"
+    "date_to": {
+      "type": "datetime"
     },
     "location": {
       "type": "string"
