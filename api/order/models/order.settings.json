@@ -26,13 +26,13 @@
       "type": "string"
     },
     "tournament": {
-      "model": "tournament",
-      "via": "orders"
+      "via": "orders",
+      "model": "tournament"
     },
     "user": {
+      "via": "orders",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "orders"
+      "model": "user"
     },
     "camp": {
       "via": "orders",

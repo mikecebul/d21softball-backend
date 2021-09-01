@@ -62,6 +62,15 @@
     "orders": {
       "via": "user",
       "collection": "order"
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "teamName": {
+      "type": "string"
     }
   }
 }

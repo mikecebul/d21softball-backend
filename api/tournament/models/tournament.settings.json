@@ -44,10 +44,10 @@
       "targetField": "name"
     },
     "date_from": {
-      "type": "date"
+      "type": "datetime"
     },
     "date_to": {
-      "type": "date"
+      "type": "datetime"
     },
     "class": {
       "type": "string"
@@ -56,9 +56,9 @@
       "type": "string"
     },
     "orders": {
+      "private": true,
       "via": "tournament",
-      "collection": "order",
-      "private": true
+      "collection": "order"
     }
   }
 }
