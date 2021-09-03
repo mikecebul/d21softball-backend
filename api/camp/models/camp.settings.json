@@ -56,6 +56,9 @@
     },
     "location": {
       "type": "string"
+    },
+    "testWebhook": {
+      "type": "string"
     }
   }
 }
