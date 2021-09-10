@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/hall-of-fames",
+      "handler": "hall-of-fame.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/hall-of-fames/count",
+      "handler": "hall-of-fame.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/hall-of-fames/:id",
+      "handler": "hall-of-fame.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/hall-of-fames",
+      "handler": "hall-of-fame.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/hall-of-fames/:id",
+      "handler": "hall-of-fame.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/hall-of-fames/:id",
+      "handler": "hall-of-fame.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

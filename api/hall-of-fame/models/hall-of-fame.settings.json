@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hall_of_fames",
+  "info": {
+    "name": "HallOfFame",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "list": {
+      "type": "richtext"
+    }
+  }
+}
