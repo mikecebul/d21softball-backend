@@ -91,6 +91,7 @@ module.exports = {
             currency: "usd",
             product_data: {
               name: realProduct.name,
+              description: "Umpire",
             },
             unit_amount: fromDecimalToInt(realProduct.price),
           },

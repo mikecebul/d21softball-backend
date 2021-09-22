@@ -57,8 +57,14 @@
     "location": {
       "type": "string"
     },
-    "testWebhook": {
-      "type": "string"
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Umpire",
+        "Pitcher",
+        "Catcher",
+        "Player"
+      ]
     }
   }
 }
