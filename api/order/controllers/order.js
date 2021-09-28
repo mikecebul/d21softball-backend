@@ -59,9 +59,6 @@ module.exports = {
     const { tournament, camp } = ctx.request.body;
     const { user } = ctx.state;
 
-    console.log("Request Body Tournament:", tournament);
-    console.log("Request Body Camp:", camp);
-
     if (!tournament && !camp) {
       return ctx.throw(400, "Please specify a product");
     }
@@ -95,11 +92,12 @@ module.exports = {
           price_data: {
             currency: "usd",
             product_data: {
-              name: `${realProduct.name} ${realProduct.date_from}`,
-              description:
-                `${moment(camp?.date_from.substring(0, 10)).format(
-                  "MMMM Do, YYYY"
-                )} - ${camp?.type}` || realProduct.class,
+              name: realProduct.name,
+              description: camp
+                ? `${moment(camp.date_from.substring(0, 10)).format(
+                    "MMMM Do, YYYY"
+                  )} - ${camp.type}`
+                : realProduct.class,
             },
             unit_amount: fromDecimalToInt(realProduct.price),
           },
