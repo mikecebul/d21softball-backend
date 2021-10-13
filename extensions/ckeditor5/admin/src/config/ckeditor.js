@@ -98,7 +98,7 @@ module.exports = {
     // ]
   },
   htmlEmbed: {
-    // showPreviews: true,
+    showPreviews: true,
   },
   fontFamily: {
     // options: [
