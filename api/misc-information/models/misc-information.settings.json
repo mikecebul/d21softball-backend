@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "misc_informations",
+  "info": {
+    "name": "Misc Information"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "local_leagues": {
+      "type": "richtext"
+    }
+  }
+}
