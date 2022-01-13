@@ -14,7 +14,7 @@ module.exports = ({}) => ({
   settings: {
     cors: {
       enabled: true,
-      origin: ['https://mikecebul.cloud', 'https://www.mikecebul.cloud', 'https://api.mikecebul.cloud', 'http://localhost:3000', 'http://localhost:1337'],
+      origin: ['http://localhost:3000', 'http://localhost:1337'], // 'https://mikecebul.cloud', 'https://www.mikecebul.cloud', 'https://api.mikecebul.cloud', 
     },
     cookieGetter: {
       enabled: true

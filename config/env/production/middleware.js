@@ -14,13 +14,20 @@ module.exports = ({}) => ({
   settings: {
     cors: {
       enabled: true,
-      origin: ['https://mikecebul.cloud', 'https://www.mikecebul.cloud', 'https://api.mikecebul.cloud', 'http://localhost:3000', 'http://localhost:1337'],
+      origin: [
+        "https://d21softball.org",
+        "https://www.d21softball.org",
+        "https://api.d21softball.org",
+        "http://api.d21softball.org",
+        "http://localhost:3000",
+        "http://localhost:1337",
+      ], // 'https://mikecebul.cloud', 'https://www.mikecebul.cloud', 'https://api.mikecebul.cloud',
     },
     cookieGetter: {
-      enabled: true
+      enabled: true,
     },
     cookieSetter: {
-      enabled: true
-    }
+      enabled: true,
+    },
   },
-})
+});
