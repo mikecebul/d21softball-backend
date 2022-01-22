@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "hall_of_fames",
   "info": {
-    "name": "HallOfFame",
+    "name": "Hall of Fame",
     "description": ""
   },
   "options": {
