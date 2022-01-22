@@ -136,4 +136,7 @@ module.exports = {
     //   },
     // ],
   },
+  mediaEmbed: {
+    previewsInData: true,
+  },
 };
