@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "front_pages",
+  "info": {
+    "name": "Front Page",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "updates": {
+      "type": "component",
+      "repeatable": true,
+      "component": "frontpage.updates"
+    },
+    "news": {
+      "type": "component",
+      "repeatable": false,
+      "component": "frontpage.news"
+    }
+  }
+}
