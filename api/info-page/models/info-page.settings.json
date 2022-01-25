@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "info_pages",
+  "info": {
+    "name": "Info Page",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "motel": {
+      "type": "component",
+      "repeatable": false,
+      "component": "infopage.motel"
+    },
+    "umpires": {
+      "type": "component",
+      "repeatable": false,
+      "component": "infopage.umpires"
+    }
+  }
+}
