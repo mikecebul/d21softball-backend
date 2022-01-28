@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "pitcher_classifications",
+  "info": {
+    "name": "Pitcher Classification",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "committee_members": {
+      "type": "component",
+      "repeatable": true,
+      "component": "pitcher-classification.committee-members"
+    },
+    "title": {
+      "type": "string"
+    },
+    "link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pitcher-classification.link"
+    }
+  }
+}

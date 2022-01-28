@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/pitcher-classification",
+      "handler": "pitcher-classification.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/pitcher-classification",
+      "handler": "pitcher-classification.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/pitcher-classification",
+      "handler": "pitcher-classification.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
