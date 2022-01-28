@@ -29,6 +29,9 @@
     },
     "url": {
       "type": "string"
+    },
+    "list_order": {
+      "type": "integer"
     }
   }
 }
