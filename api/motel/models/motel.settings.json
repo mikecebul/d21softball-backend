@@ -2,7 +2,8 @@
   "kind": "singleType",
   "collectionName": "motels",
   "info": {
-    "name": "Motel"
+    "name": "Motel",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -11,10 +12,10 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "motel": {
+    "info": {
       "type": "component",
       "repeatable": false,
-      "component": "infopage.motel"
+      "component": "motel.info"
     }
   }
 }

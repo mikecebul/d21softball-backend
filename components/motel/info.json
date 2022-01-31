@@ -1,9 +1,8 @@
 {
-  "collectionName": "components_infopage_motels",
+  "collectionName": "components_motel_infos",
   "info": {
-    "name": "motel",
-    "icon": "question",
-    "description": ""
+    "name": "info",
+    "icon": "info-circle"
   },
   "options": {},
   "attributes": {
