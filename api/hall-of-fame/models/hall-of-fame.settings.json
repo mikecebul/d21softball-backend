@@ -1,9 +1,8 @@
 {
-  "kind": "collectionType",
+  "kind": "singleType",
   "collectionName": "hall_of_fames",
   "info": {
-    "name": "Hall of Fame",
-    "description": ""
+    "name": "Hall of Fame"
   },
   "options": {
     "increments": true,
@@ -12,8 +11,10 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "list": {
-      "type": "richtext"
+    "table": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hall-of-fame.table"
     }
   }
 }
