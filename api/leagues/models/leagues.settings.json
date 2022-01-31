@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "leagues",
+  "info": {
+    "name": "Leagues",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "league": {
+      "type": "component",
+      "repeatable": true,
+      "component": "league.league"
+    }
+  }
+}

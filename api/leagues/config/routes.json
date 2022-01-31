@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/leagues",
+      "handler": "leagues.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/leagues",
+      "handler": "leagues.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/leagues",
+      "handler": "leagues.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

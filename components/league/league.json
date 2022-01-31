@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_league_leagues",
+  "info": {
+    "name": "league",
+    "icon": "list",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "league_name": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "contact_name": {
+      "type": "string"
+    },
+    "contact_position": {
+      "type": "string"
+    },
+    "contact_phone": {
+      "type": "string"
+    },
+    "contact_email": {
+      "type": "email"
+    },
+    "link": {
+      "type": "component",
+      "repeatable": true,
+      "component": "frontpage.updates"
+    }
+  }
+}
