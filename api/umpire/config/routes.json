@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/umpire",
+      "handler": "umpire.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/umpire",
+      "handler": "umpire.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/umpire",
+      "handler": "umpire.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

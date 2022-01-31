@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_umpire_umpires",
+  "info": {
+    "name": "umpire",
+    "icon": "user-astronaut",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "umpire.links"
+    },
+    "header": {
+      "type": "string"
+    },
+    "sub_header": {
+      "type": "string"
+    }
+  }
+}
