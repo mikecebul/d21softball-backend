@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/motel",
+      "handler": "motel.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/motel",
+      "handler": "motel.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/motel",
+      "handler": "motel.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
