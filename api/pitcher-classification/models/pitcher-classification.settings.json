@@ -24,6 +24,9 @@
       "type": "component",
       "repeatable": false,
       "component": "pitcher-classification.link"
+    },
+    "appeal_process": {
+      "type": "richtext"
     }
   }
 }
