@@ -4,10 +4,9 @@ https://d21softball.org/
 
 ### Backend
 Strapi CMS on Digital Ocean Droplet.
-https://github.com/mikecebul/d21softball-backend
 
 ### Frontend
-This website was created with Nextjs and Material UI.
+This website was created with Nextjs and Material UI. <br>
 https://github.com/mikecebul/d21softball-frontend
 
 ## Inspiration
