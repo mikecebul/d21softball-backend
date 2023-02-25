@@ -16,6 +16,11 @@ Lot's of great tutorials for Material UI, but I have to say the most helpful was
 https://youtube.com/playlist?list=PLQg6GaokU5CwiVmsZ0d_9Zsg_DnIP_xwr
 
 ## How to use
+### Prerequisites
+Node v12
+```bash
+nvm us lts/erbium
+```
 
 ## Developing
 
