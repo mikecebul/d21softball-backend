@@ -17,10 +17,23 @@ https://youtube.com/playlist?list=PLQg6GaokU5CwiVmsZ0d_9Zsg_DnIP_xwr
 
 ## How to use
 ### Prerequisites
-Node v12
+Node v14
 ```bash
 nvm us lts/erbium
 ```
+Docker
+to start the postgres database use:
+```bash
+docker-compose up
+```
+
+To load data for the first time
+```bash
+docker exec -i postgres-d21 psql -U strapi strapi < d21.sql
+```
+
+You will need to paste in public/uploads folder to get the images
+
 
 ## Developing
 
