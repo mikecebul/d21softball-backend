@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "hall_of_fames",
+  "info": {
+    "singularName": "hall-of-fame",
+    "pluralName": "hall-of-fames",
+    "displayName": "Hall-of-fame",
+    "name": "hall-of-fame"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "table": {
+      "type": "component",
+      "repeatable": false,
+      "component": "hall-of-fame.table"
+    },
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "frontpage.updates"
+    }
+  }
+}

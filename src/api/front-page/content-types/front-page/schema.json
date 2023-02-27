@@ -1,0 +1,38 @@
+{
+  "kind": "singleType",
+  "collectionName": "front_pages",
+  "info": {
+    "singularName": "front-page",
+    "pluralName": "front-pages",
+    "displayName": "Front-page",
+    "name": "front-page"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "updates": {
+      "type": "component",
+      "repeatable": true,
+      "component": "frontpage.updates"
+    },
+    "news": {
+      "type": "component",
+      "repeatable": false,
+      "component": "frontpage.news"
+    },
+    "hero_image": {
+      "type": "media",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "multiple": false,
+      "required": false
+    }
+  }
+}

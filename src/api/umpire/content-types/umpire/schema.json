@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "umpires",
+  "info": {
+    "singularName": "umpire",
+    "pluralName": "umpires",
+    "displayName": "Umpire",
+    "name": "umpire"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "umpire": {
+      "type": "component",
+      "repeatable": false,
+      "component": "umpire.umpire"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "kind": "singleType",
+  "collectionName": "pitcher_classifications",
+  "info": {
+    "singularName": "pitcher-classification",
+    "pluralName": "pitcher-classifications",
+    "displayName": "Pitcher-classification",
+    "name": "pitcher-classification"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "committee_members": {
+      "type": "component",
+      "repeatable": true,
+      "component": "pitcher-classification.committee-members"
+    },
+    "title": {
+      "type": "string"
+    },
+    "link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pitcher-classification.link"
+    },
+    "appeal_process": {
+      "type": "richtext"
+    }
+  }
+}

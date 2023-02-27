@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_hall_of_fame_tables",
+  "info": {
+    "icon": "table",
+    "displayName": "table"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "member": {
+      "type": "component",
+      "repeatable": true,
+      "component": "hall-of-fame.member"
+    }
+  }
+}

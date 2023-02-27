@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_pitcher_classification_committee_members",
+  "info": {
+    "icon": "users",
+    "displayName": "committee_members"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    }
+  }
+}

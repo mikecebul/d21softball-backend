@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "motels",
+  "info": {
+    "singularName": "motel",
+    "pluralName": "motels",
+    "displayName": "Motel",
+    "name": "motel"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "info": {
+      "type": "component",
+      "repeatable": false,
+      "component": "motel.info"
+    }
+  }
+}

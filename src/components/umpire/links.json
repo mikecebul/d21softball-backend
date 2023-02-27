@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_umpire_links",
+  "info": {
+    "icon": "external-link-square-alt",
+    "displayName": "links"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "media": {
+      "type": "media",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "multiple": false,
+      "required": false
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

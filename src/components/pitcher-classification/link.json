@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_pitcher_classification_links",
+  "info": {
+    "icon": "link",
+    "displayName": "link"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "media": {
+      "type": "media",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "multiple": false,
+      "required": false
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

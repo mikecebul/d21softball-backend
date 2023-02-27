@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_hall_of_fame_members",
+  "info": {
+    "icon": "address-card",
+    "displayName": "member"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "year": {
+      "type": "string"
+    },
+    "media": {
+      "type": "media",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "multiple": false,
+      "required": false
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

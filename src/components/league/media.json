@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_league_media",
+  "info": {
+    "icon": "camera",
+    "displayName": "media"
+  },
+  "options": {},
+  "attributes": {
+    "final_stats": {
+      "type": "media",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "multiple": false,
+      "required": false
+    },
+    "champion": {
+      "type": "media",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "multiple": false,
+      "required": false
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_motel_infos",
+  "info": {
+    "icon": "info-circle",
+    "displayName": "info"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "media": {
+      "type": "media",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "multiple": false,
+      "required": false
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}
