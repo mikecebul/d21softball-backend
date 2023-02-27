@@ -5,11 +5,22 @@
  */
 
 module.exports = {
-  // exampleAction: async (ctx, next) => {
-  //   try {
-  //     ctx.body = 'ok';
-  //   } catch (err) {
-  //     ctx.body = err;
-  //   }
-  // }
+  action: async (ctx, next) => {
+    try {
+      ctx.cookies.set("token", "", {
+        domain:
+          process.env.NODE_ENV === "development"
+            ? "localhost"
+            : "d21softball.org",
+      });
+      ctx.send({
+        authorized: true,
+        message: "Successfully destroyed session",
+      });
+    } catch (err) {
+      ctx.send({
+        message: `An error occured: ${err}`
+      });
+    }
+  }
 };
