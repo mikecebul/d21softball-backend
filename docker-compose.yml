@@ -1,28 +1,25 @@
 # Use postgres/example user/password credentials
-version: '3.8'
+version: "3.8"
+name: d21softball-backend-v4
 
 services:
-
   db:
-    container_name: postgres-d21
+    container_name: postgres-d21-v4
     image: postgres
     restart: always
     environment:
-      POSTGRES_DB: strapi
+      POSTGRES_DB: strapi_v4
       POSTGRES_USER: strapi
       POSTGRES_PASSWORD: strapi
     ports:
-      - 5432:5432
+      - 5433:5432
 
   pgadmin:
-    container_name: pgadmin4-d21
+    container_name: pgadmin4-d21-v4
     image: dpage/pgadmin4
     restart: always
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@admin.com
       PGADMIN_DEFAULT_PASSWORD: admin
     ports:
-      - 5050:80
-volumes:
-  data:
-    external: true
+      - 5051:80
