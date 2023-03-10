@@ -10,21 +10,29 @@
     "title": {
       "type": "string"
     },
-    "content": {
+    "old_content": {
       "type": "richtext"
     },
     "media": {
       "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos"
-      ],
-      "multiple": false,
-      "required": false
+      ]
     },
     "link": {
       "type": "string"
+    },
+    "content": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "standard"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
     }
   }
 }

@@ -10,11 +10,19 @@
     "date": {
       "type": "datetime"
     },
-    "content": {
+    "old_content": {
       "type": "richtext"
     },
     "from": {
       "type": "string"
+    },
+    "content": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "standard"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
     }
   }
 }

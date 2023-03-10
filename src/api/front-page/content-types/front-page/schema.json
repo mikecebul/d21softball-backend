@@ -5,7 +5,8 @@
     "singularName": "front-page",
     "pluralName": "front-pages",
     "displayName": "Front-page",
-    "name": "front-page"
+    "name": "front-page",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -26,13 +27,13 @@
     },
     "hero_image": {
       "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos"
-      ],
-      "multiple": false,
-      "required": false
+      ]
     }
   }
 }
