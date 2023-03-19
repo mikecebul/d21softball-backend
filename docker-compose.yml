@@ -1,0 +1,15 @@
+# Use postgres/example user/password credentials
+version: "3.8"
+name: d21softball-backend-v3
+
+services:
+  db:
+    container_name: postgres-d21-v3
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: strapi_v3
+      POSTGRES_USER: strapi
+      POSTGRES_PASSWORD: strapi
+    ports:
+      - 5432:5432
