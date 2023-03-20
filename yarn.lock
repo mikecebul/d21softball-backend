@@ -2742,9 +2742,9 @@ camelize@^1.0.0:
   integrity sha512-dU+Tx2fsypxTgtLoE36npi3UqcjSSMNYfkqgmoEhtZrraP5VWq0K7FkWVTYa8eMPtnU/G2txVsfdCJTn9uzpuQ==
 
 caniuse-lite@^1.0.30001109, caniuse-lite@^1.0.30001449:
-  version "1.0.30001467"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001467.tgz#1afc9c16ed61f50dd87139da87ca43a3e0051c77"
-  integrity sha512-cEdN/5e+RPikvl9AHm4uuLXxeCNq8rFsQ+lPHTfe/OtypP3WwnVVbjn+6uBV7PaFL6xUFzTh+sSCOz1rKhcO+Q==
+  version "1.0.30001468"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001468.tgz#0101837c6a4e38e6331104c33dcfb3bdf367a4b7"
+  integrity sha512-zgAo8D5kbOyUcRAgSmgyuvBkjrGk5CGYG5TYgFdpQv+ywcyEpo1LOWoG8YmoflGnh+V+UsNuKYedsoYs0hzV5A==
 
 captains-log@^2.0.2:
   version "2.0.3"
@@ -9550,7 +9550,7 @@ std-env@^2.2.1:
   dependencies:
     ci-info "^3.1.1"
 
-strapi-admin@11:
+strapi-admin@3.6.11:
   version "3.6.11"
   resolved "https://registry.yarnpkg.com/strapi-admin/-/strapi-admin-3.6.11.tgz#80dd185bf16211dd561fa7b6b35ee3e60aab4eae"
   integrity sha512-UUJ7+O4eXU/aOeCbuDyNHDLyhFLD+N/9cPE+nNZj/LVn2f+acXAkZRqrBZwN+TSbDfkKJ+7btu/+4HHlIs8wPQ==
