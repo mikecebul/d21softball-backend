@@ -1,6 +1,5 @@
 # District 21 Softball of Michigan
 
-
 E-commerce website to sell registration for tournaments and training workshops. Plus lots of pages for history and information.
 https://d21softball.org/
 
@@ -18,6 +17,12 @@ yarn
 yarn build
 ```
 
+If in production and low on memory to build use:
+
+```bash
+NODE_ENV=production yarn build --no-optimization
+```
+
 ```bash
 yarn db:up
 ```
@@ -32,18 +37,16 @@ docker exec -i postgres-d21-v3 psql -U strapi strapi-v3 < d21.sql
 yarn dev
 ```
 
-### Ingrastructure
+### Infrastructure
 
 Strapi CMS on Digital Ocean Droplet.
 
 ### Frontend
 
-
 This website was created with Nextjs and Material UI. <br>
 https://github.com/mikecebul/d21softball-frontend
 
 ## Inspiration
-
 
 I followed this project by GallowDaSballow
 https://github.com/GalloDaSballo/Next-Ecommerce-Frontend <br>
