@@ -56,7 +56,7 @@ module.exports = {
    */
   async create(ctx) {
     const BASE_URL = ctx.request.headers.origin || "http://localhost:3000";
-    const { tournament, camp } = ctx.request.body;
+    const { tournament, camp, email } = ctx.request.body;
     const { user } = ctx.state;
 
     if (!tournament && !camp) {
@@ -83,7 +83,7 @@ module.exports = {
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
-      customer_email: user.email,
+      customer_email: user ? user.email : email,
       mode: "payment",
       success_url: `${BASE_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: BASE_URL,
@@ -107,7 +107,7 @@ module.exports = {
     });
 
     const newOrder = await strapi.services.order.create({
-      user: user.id,
+      user: user ? user.id : null,
       ...(tournament
         ? { tournament: realProduct.id }
         : { camp: realProduct.id }),
