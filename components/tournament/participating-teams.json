@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_tournament_participating_teams",
+  "info": {
+    "name": "Participating Teams",
+    "icon": "user-alt",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "team": {
+      "type": "string",
+      "required": true
+    },
+    "isPaid": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

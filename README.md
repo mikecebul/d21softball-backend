@@ -27,8 +27,18 @@ NODE_ENV=production yarn build --no-optimization
 yarn db:up
 ```
 
-The first time you will want to seed the database
+The first time you will want to seed the database. If you don't have a pg_dump from production, you need to get a fresh copy. Remote into production and switch to the postgres user.
 
+```bash
+sudo su - postgres
+```
+Then pg_dump a copy. These flags inculde blobs, clean, and verbose.
+
+```bash
+pg_dump -bcv > d21.sql
+```
+
+Now restore the newly created docker DB with the dump.
 ```bash
 docker exec -i postgres-d21-v3 psql -U strapi strapi-v3 < d21.sql
 ```

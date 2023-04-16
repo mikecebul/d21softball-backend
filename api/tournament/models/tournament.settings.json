@@ -86,6 +86,11 @@
       "plugin": "upload",
       "required": false,
       "pluginOptions": {}
+    },
+    "teams": {
+      "type": "component",
+      "repeatable": true,
+      "component": "tournament.participating-teams"
     }
   }
 }
