@@ -56,8 +56,8 @@
       "type": "string"
     },
     "orders": {
-      "private": true,
       "via": "tournament",
+      "private": true,
       "collection": "order"
     },
     "finalBracket": {

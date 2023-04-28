@@ -2,7 +2,8 @@
   "collectionName": "components_hall_of_fame_tables",
   "info": {
     "name": "table",
-    "icon": "table"
+    "icon": "table",
+    "description": ""
   },
   "options": {},
   "attributes": {

@@ -37,6 +37,9 @@
     "camp": {
       "via": "orders",
       "model": "camp"
+    },
+    "team": {
+      "type": "string"
     }
   }
 }

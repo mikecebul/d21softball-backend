@@ -102,7 +102,7 @@ module.exports = {
     const newOrder = await strapi.services.order.create({
       user: user ? user.id : null,
       tournament: realProduct.id,
-      team: teamId,
+      team: team.team,
       total: realProduct.price,
       status: "unpaid",
       checkout_session: session.id,

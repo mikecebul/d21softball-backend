@@ -19,8 +19,8 @@
       "type": "decimal"
     },
     "orders": {
-      "private": true,
       "via": "camp",
+      "private": true,
       "collection": "order"
     },
     "image": {
