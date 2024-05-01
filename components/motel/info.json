@@ -2,7 +2,8 @@
   "collectionName": "components_motel_infos",
   "info": {
     "name": "info",
-    "icon": "info-circle"
+    "icon": "info-circle",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -25,6 +26,9 @@
       "pluginOptions": {}
     },
     "url": {
+      "type": "string"
+    },
+    "caption": {
       "type": "string"
     }
   }

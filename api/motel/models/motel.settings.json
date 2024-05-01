@@ -16,6 +16,11 @@
       "type": "component",
       "repeatable": false,
       "component": "motel.info"
+    },
+    "fuel": {
+      "type": "component",
+      "repeatable": false,
+      "component": "motel.info"
     }
   }
 }
