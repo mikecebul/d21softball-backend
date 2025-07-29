@@ -2,7 +2,7 @@ name: Build and Deploy Docker Image
 
 on:
   push:
-    branches: ['docker']
+    branches: ["docker"]
 
 jobs:
   build-and-push-dockerfile-image:
@@ -33,3 +33,4 @@ jobs:
             STRIPE_SK=${{ secrets.STRIPE_SK }}
             ADMIN_JWT_SECRET=${{ secrets.ADMIN_JWT_SECRET }}
             JWT_SECRET=${{ secrets.JWT_SECRET }}
+            PRODUCTION_URL=${{ secrets.PRODUCTION_URL }}
