@@ -13,3 +13,35 @@ services:
       POSTGRES_PASSWORD: strapi
     ports:
       - 5432:5432
+
+  mailhog:
+    image: mailhog/mailhog
+    container_name: mailhog-d21-v3
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+
+  strapi:
+    image: d21softball-backend
+    environment:
+      DATABASE_CLIENT: postgres
+      DATABASE_NAME: strapi-v3
+      DATABASE_HOST: db
+      DATABASE_PORT: 5432
+      DATABASE_USERNAME: strapi
+      DATABASE_PASSWORD: strapi
+      DATABASE_SSL: false
+      NODE_ENV: development
+      EMAIL_PROVIDER: nodemailer
+      EMAIL_SMTP_HOST: localhost
+      EMAIL_SMTP_PORT: 1025
+      EMAIL_SMTP_USER: website@d21softball.org
+      EMAIL_SMTP_PASS: password
+      EMAIL_ADDRESS_FROM: info@d21softball.org
+      EMAIL_ADDRESS_REPLY: info@d21softball.org
+    volumes:
+      - ./public/uploads:/strapi/public/uploads
+    ports:
+      - '1337:1337'
+    depends_on:
+      - db

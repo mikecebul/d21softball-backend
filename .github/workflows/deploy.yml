@@ -1,0 +1,34 @@
+name: Build and Deploy Docker Image
+
+on:
+  push:
+    branches: ['docker']
+
+jobs:
+  build-and-push-dockerfile-image:
+    runs-on: ubuntu-latest
+    environment: Production
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: mikecebul
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: |
+            mikecebul/d21-softball-strapi-v3:latest
+          platforms: linux/amd64
+          secrets: |
+            STRIPE_SK=${{ secrets.STRIPE_SK }}
+            ADMIN_JWT_SECRET=${{ secrets.ADMIN_JWT_SECRET }}
+            JWT_SECRET=${{ secrets.JWT_SECRET }}
