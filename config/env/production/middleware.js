@@ -21,6 +21,7 @@ module.exports = ({}) => ({
         "http://api.d21softball.org",
         "http://localhost:3000",
         "http://localhost:1337",
+        "https://d21softball.mikecebul.com",
       ], // 'https://mikecebul.cloud', 'https://www.mikecebul.cloud', 'https://api.mikecebul.cloud',
     },
     cookieGetter: {

@@ -1,7 +1,7 @@
 module.exports = ({ env }) => ({
   host: env("HOST", "0.0.0.0"),
   port: env.int("PORT", 1337),
-  url: "https://api.d21softball.org",
+  url: env("PRODUCTION_URL", "https://api.d21softball.org"),
   proxy: true,
   admin: {
     auth: {
