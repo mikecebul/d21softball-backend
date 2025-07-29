@@ -1,4 +1,4 @@
-FROM node:14-alpine AS BUILD_IMAGE
+FROM node:14-alpine AS base
 
 WORKDIR /strapi
 
@@ -30,7 +30,7 @@ RUN yarn build
 FROM node:14-alpine
 
 # Only copy your source code without system file
-COPY --from=BUILD_IMAGE /strapi /strapi
+COPY --from=base /strapi /strapi
 
 WORKDIR /strapi
 
