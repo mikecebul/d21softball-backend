@@ -18,8 +18,8 @@ RUN --mount=type=secret,id=STRIPE_SK \
   sh -c '( \
   echo "STRIPE_SK=$(cat /run/secrets/STRIPE_SK)" && \
   echo "ADMIN_JWT_SECRET=$(cat /run/secrets/ADMIN_JWT_SECRET)" && \
-  echo "JWT_SECRET=$(cat /run/secrets/JWT_SECRET)" \
-  echo "PRODUCTION_URL=$(cat /run/secrets/PRODUCTION_URL)" && \
+  echo "JWT_SECRET=$(cat /run/secrets/JWT_SECRET)" && \
+  echo "PRODUCTION_URL=$(cat /run/secrets/PRODUCTION_URL)" \
   ) > .env.production'
 
 ENV NODE_ENV=production
