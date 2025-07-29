@@ -1,4 +1,4 @@
-module.exports = ({ }) => ({
+module.exports = ({}) => ({
   load: {
     before: [
       "cookieGetter",
@@ -14,13 +14,19 @@ module.exports = ({ }) => ({
   settings: {
     cors: {
       enabled: true,
-      origin: ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:1337'], // 'https://mikecebul.cloud', 'https://www.mikecebul.cloud', 'https://api.mikecebul.cloud', 
+      origin: [
+        "http://localhost:3000",
+        "http://localhost:3001",
+        "http://localhost:1337",
+        "https://mikecebul.com",
+        "https://d21softball.org",
+      ], // 'https://mikecebul.cloud', 'https://www.mikecebul.cloud', 'https://api.mikecebul.cloud',
     },
     cookieGetter: {
-      enabled: true
+      enabled: true,
     },
     cookieSetter: {
-      enabled: true
-    }
+      enabled: true,
+    },
   },
-})
+});

@@ -15,7 +15,7 @@ module.exports = (strapi) => {
               domain:
                 process.env.NODE_ENV === "development"
                   ? "localhost"
-                  : "d21softball.org",
+                  : env("PRODUCTION_URL", "d21softball.org"),
               overWrite: true,
               sameSite: "Lax",
               maxAge: 1000 * 60 * 60 * 24 * 14, // 14 Day Age

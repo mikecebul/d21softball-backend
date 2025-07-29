@@ -1,5 +1,3 @@
-# Use postgres/example user/password credentials
-version: "3.8"
 name: d21softball-backend-v3
 
 services:
@@ -22,7 +20,7 @@ services:
       - "8025:8025"
 
   strapi:
-    image: d21softball-backend
+    image: d21-softball-strapi-v3
     environment:
       DATABASE_CLIENT: postgres
       DATABASE_NAME: strapi-v3
