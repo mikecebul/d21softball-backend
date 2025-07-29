@@ -27,6 +27,7 @@ jobs:
           push: true
           tags: |
             mikecebul/d21-softball-strapi-v3:latest
+            mikecebul/d21-softball-strapi-v3:${{ github.sha }}
           platforms: linux/amd64
           secrets: |
             STRIPE_SK=${{ secrets.STRIPE_SK }}
