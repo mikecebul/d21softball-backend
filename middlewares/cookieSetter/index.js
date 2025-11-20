@@ -1,4 +1,7 @@
 // ./middlewares/cookieSetter/index.js
+
+const { env } = require("strapi-utils");
+
 module.exports = (strapi) => {
   return {
     initialize() {
