@@ -1,4 +1,4 @@
-FROM node:14-alpine AS base
+FROM node:14-alpine AS build
 
 WORKDIR /strapi
 
@@ -10,21 +10,9 @@ RUN yarn install --production=true --frozen-lockfile
 # Copy all for build and release cache if package.json update
 COPY . .
 
-# Create .env.production from Docker secrets (build-time only)
-RUN --mount=type=secret,id=STRIPE_SK \
-  --mount=type=secret,id=ADMIN_JWT_SECRET \
-  --mount=type=secret,id=JWT_SECRET \
-  --mount=type=secret,id=PRODUCTION_URL \
-  sh -c '( \
-  echo "STRIPE_SK=$(cat /run/secrets/STRIPE_SK)" && \
-  echo "ADMIN_JWT_SECRET=$(cat /run/secrets/ADMIN_JWT_SECRET)" && \
-  echo "JWT_SECRET=$(cat /run/secrets/JWT_SECRET)" && \
-  echo "PRODUCTION_URL=$(cat /run/secrets/PRODUCTION_URL)" \
-  ) > .env.production'
-
 ENV NODE_ENV=production
 
-RUN yarn build
+RUN yarn build && rm -f .env .env.*
 
 #------------------------------------------------------------------------------------
 
@@ -32,7 +20,7 @@ RUN yarn build
 FROM node:14-alpine
 
 # Only copy your source code without system file
-COPY --from=base /strapi /strapi
+COPY --from=build /strapi /strapi
 
 WORKDIR /strapi
 
