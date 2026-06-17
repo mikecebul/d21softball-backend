@@ -29,8 +29,3 @@ jobs:
             mikecebul/d21-softball-strapi-v3:latest
             mikecebul/d21-softball-strapi-v3:${{ github.sha }}
           platforms: linux/amd64
-          secrets: |
-            STRIPE_SK=${{ secrets.STRIPE_SK }}
-            ADMIN_JWT_SECRET=${{ secrets.ADMIN_JWT_SECRET }}
-            JWT_SECRET=${{ secrets.JWT_SECRET }}
-            PRODUCTION_URL=${{ secrets.PRODUCTION_URL }}
